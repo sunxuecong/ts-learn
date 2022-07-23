@@ -1,27 +1,24 @@
 {
   /*
   tsconfig.json 是ts的配置文件，ts编译器可以根据他的信息来对代码进行解析
-    "include"用来指定哪些文件需要被编译
-        **表示任意目录，*表示任意文件
-     "exclude"被排除的模块
-        默认值：["node_modules", "bower_components", "jspm_packages"]
   */
+
+  // "include"用来指定哪些文件需要被编译
+  //  **表示任意目录，*表示任意文件
   "include":[
     "./src/**/*"
   ],
-/*
-  "exclude": [
-  ]
-  */
 
-  /*
-  compilerOptions是编译器的选项
-  */
+  //"exclude"被排除的模块
+  // 默认值：["node_modules", "bower_components", "jspm_packages"]
+  //"exclude": [
+  //],
+
+  //compilerOptions是编译器的选项
   "compilerOptions": {
     //target用来指定被编译成的js的版本。
     //'es3', 'es5', 'es6', 'es2015', 'es2016', 'es2017', 'es2018', 'es2019', 'es2020', 'es2021','es2022', 'esnext'.
     "target": "es6",
-
 
     //module用来指定模块化的标准
     //'none', 'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'es2020', 'es2022', 'esnext','node16', 'nodenext'.
@@ -37,9 +34,10 @@
     //snext.weakref'.
 
     /*"lib": ["es6"]*/
-    //outDir用于指定编译后的文件所在的目录
 
+    //outDir用于指定编译后的文件所在的目录
     "outDir": "./dist",
+
     //outFile将代码合并为一个文件
     //设置后所有的 全局作用域的代码都会合并到同一个文件中。
     // "outFile": "" //一般不用
@@ -59,5 +57,19 @@
     //当有错误时不生成编译后的文件
     "noEmitOnError": true,
 
-  },
+    //所有检查的总开关  这个设置为true，下边的所有的会设置成true。 建议设置成true。
+    "strict": true,
+
+    //用来设置编译后的文件是否使用严格模式 。默认值是false
+    "alwaysStrict": false,
+
+    //不允许隐式的any类型。
+    "noImplicitAny": true,
+
+    //用来设置是否使用隐式的this
+    "noImplicitThis": true,
+
+    //严格的检查空值
+    "strictNullChecks": true
+  }
 }
